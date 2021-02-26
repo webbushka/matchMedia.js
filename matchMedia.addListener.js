@@ -38,7 +38,7 @@
             listeners   = [],
             index       = 0;
 
-        mql.addListener = function(listener) {
+        mql.addListener = mql.addEventListener = function(listener) {
             // Changes would not occur to css media type so return now (Affects IE <= 8)
             if (!hasMediaQueries) {
                 return;
@@ -62,7 +62,7 @@
             listeners.push(listener);
         };
 
-        mql.removeListener = function(listener) {
+        mql.removeListener = mql.removeEventListener = function(listener) {
             for (var i = 0, il = listeners.length; i < il; i++){
                 if (listeners[i] === listener){
                     listeners.splice(i, 1);
